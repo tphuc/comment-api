@@ -1,0 +1,25 @@
+POST http://localhost:3000/comments
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "content": "Test Comment A"
+}
+
+
+###
+GET http://localhost:3000/comments
+
+
+###
+
+DELETE http://localhost:3000/comments/668ab63319181548d4dadb87
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+
+GET http://localhost:3000/users/comments
+Content-type: application/json
+Authorization: Bearer {{token}}

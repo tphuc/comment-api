@@ -11,8 +11,16 @@ export class UsersService {
     return this.userModel.findOne({ username }).exec();
   }
 
+  async findOneById(id: string): Promise<User | null> {
+    return this.userModel.findById(id).exec();
+  }
+
   async create(data: Partial<User>): Promise<User> {
     const createdUser = new this.userModel(data);
     return createdUser.save();
+  }
+
+  async findAll(): Promise<User[]> {
+    return this.userModel.find().exec();
   }
 }
